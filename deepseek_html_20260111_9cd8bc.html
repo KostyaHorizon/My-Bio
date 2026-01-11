@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kostya Bro3l | Био-характеристики</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #1a2530;
+            --gray: #7f8c8d;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f9f9f9;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1599940824399-b87987ceb72a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .hero h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .profile-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        /* Characteristics */
+        .characteristics {
+            background-color: #f1f5f9;
+            padding: 100px 0;
+        }
+        
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .trait-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .trait-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .trait-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .trait-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* City Section */
+        .city-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .city-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .city-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .city-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .city-features {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .city-feature {
+            background-color: var(--light);
+            padding: 8px 15px;
+            border-radius: 30px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        /* Contacts Section */
+        .contacts-section {
+            background-color: var(--primary);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .contacts-section .section-title h2 {
+            color: white;
+        }
+        
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .contact-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .contact-card:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .steam { color: #00adee; }
+        .discord { color: #7289da; }
+        .telegram { color: #0088cc; }
+        
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .contact-link {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        
+        .contact-link:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        /* Copy notification */
+        .copy-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--secondary);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: none;
+        }
+        
+        .copy-notification.show {
+            display: block;
+            opacity: 1;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-content, .city-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .profile-img, .city-img {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Kostya <span>Bro3l</span></a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="mainMenu">
+                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#characteristics">Характеристики</a></li>
+                    <li><a href="#city">Мой город</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Kostya Bro3l</h1>
+            <h2>Личный сайт-визитка</h2>
+            <p>Приветствую на моём сайте! Здесь вы найдете информацию о моих характеристиках, интересах и городе, в котором я живу.</p>
+            <a href="#about" class="btn">Узнать больше</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="main-content" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Обо мне</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="profile-img">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Kostya Bro3l">
+                </div>
+                
+                <div class="about-text">
+                    <h3>Привет, я Костя!</h3>
+                    <p>Меня зовут Костя, я живу в Екатеринбурге и увлекаюсь различными активностями — от компьютерных игр до спорта. Мой псевдоним "Bro3l" отражает мою дружелюбную натуру и готовность поддержать в любой ситуации.</p>
+                    <p>Я ценю хорошую компанию, интересные беседы и новые знакомства. Всегда открыт для сотрудничества и совместных проектов.</p>
+                    <p>Мой девиз: "Никогда не останавливайся на достигнутом и всегда стремись к большему!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characteristics Section -->
+    <section class="characteristics" id="characteristics">
+        <div class="container">
+            <div class="section-title">
+                <h2>Мои характеристики</h2>
+            </div>
+            
+            <div class="traits-grid">
+                <div class="trait-card">
+                    <div class="trait-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Геймер</h3>
+                    <p>Увлекаюсь компьютерными играми, особенно командными шутерами и стратегиями. Люблю соревновательный дух и командную работу.</p>
+                </div>
+                
+                <div class="trait-card">
+                    <div class="trait-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Коммуникабельный</h3>
+                    <p>Легко нахожу общий язык с людьми, умею слушать и поддерживать диалог. Ценю честность и открытость в общении.</p>
+                </div>
+                
+                <div class="trait-card">
+                    <div class="trait-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Активный</h3>
+                    <p>Занимаюсь спортом, слежу за физической формой. Люблю активный отдых и вылазки на природу.</p>
+                </div>
+                
+                <div class="trait-card">
+                    <div class="trait-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Креативный</h3>
+                    <p>Имею творческий подход к решению задач, люблю нестандартные идеи и инновации в разных сферах жизни.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- City Section -->
+    <section class="main-content" id="city">
+        <div class="container">
+            <div class="section-title">
+                <h2>Мой город</h2>
+            </div>
+            
+            <div class="city-content">
+                <div class="city-info">
+                    <h3>Екатеринбург</h3>
+                    <p>Екатеринбург — столица Урала, город с богатой историей и современным ритмом жизни. Это четвертый по численности населения город в России, который сочетает в себе промышленное наследие и динамичное развитие.</p>
+                    <p>Город славится своими культурными событиями, спортивными достижениями и активной молодежью. Здесь находится множество современных IT-компаний, что делает его привлекательным для специалистов в области технологий.</p>
+                    <p>Екатеринбург — город контрастов, где исторические здания соседствуют с современными небоскребами, а уральская природа гармонично сочетается с городской инфраструктурой.</p>
+                    
+                    <div class="city-features">
+                        <span class="city-feature">Столица Урала</span>
+                        <span class="city-feature">Культурная жизнь</span>
+                        <span class="city-feature">IT-центр</span>
+                        <span class="city-feature">Спортивные события</span>
+                    </div>
+                </div>
+                
+                <div class="city-img">
+                    <img src="https://images.unsplash.com/photo-1620625515032-6e2d0b5fd7e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Екатеринбург">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section class="contacts-section" id="contacts">
+        <div class="container">
+            <div class="section-title">
+                <h2>Мои контакты</h2>
+            </div>
+            
+            <div class="contacts-grid">
+                <div class="contact-card">
+                    <div class="contact-icon steam">
+                        <i class="fab fa-steam"></i>
+                    </div>
+                    <h3>Steam</h3>
+                    <p>Мой профиль в Steam, где можно посмотреть мою игровую активность, достижения и коллекцию игр.</p>
+                    <a href="https://steamcommunity.com/profiles/76561199827916746" target="_blank" class="contact-link">Перейти в профиль</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon discord">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <h3>Discord</h3>
+                    <p>Мой никнейм в Discord для общения, совместных игр и обсуждений.</p>
+                    <a href="#" class="contact-link" id="discordCopy">brotislabii</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon telegram">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <h3>Telegram</h3>
+                    <p>Свяжитесь со мной в Telegram для быстрой коммуникации и обмена сообщениями.</p>
+                    <a href="https://t.me/MamukaPrivet" target="_blank" class="contact-link">@MamukaPrivet</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Kostya <span>Bro3l</span></div>
+                <p class="copyright">© 2023 Kostya Bro3l. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copy Notification -->
+    <div class="copy-notification" id="copyNotification">Никнейм скопирован!</div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainMenu = document.getElementById('mainMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainMenu.classList.toggle('active');
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (this.getAttribute('href') === '#') return;
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Close mobile menu if open
+                    mainMenu.classList.remove('active');
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Discord nickname copy functionality
+        const discordCopyBtn = document.getElementById('discordCopy');
+        const copyNotification = document.getElementById('copyNotification');
+        
+        discordCopyBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Create a temporary textarea element to copy text
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = 'brotislabii';
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+            
+            // Show notification
+            copyNotification.classList.add('show');
+            
+            // Hide notification after 3 seconds
+            setTimeout(() => {
+                copyNotification.classList.remove('show');
+            }, 3000);
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav') && !e.target.closest('#mobileMenuBtn')) {
+                mainMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
